@@ -14,7 +14,7 @@ x_train_data,y_train_data=[],[]
 for i in range(60,len(train_data)):
     x_train_data.append(scaled_data[i-60:i,0])
     y_train_data.append(scaled_data[i,0])
-    
+
 x_train_data,y_train_data=np.array(x_train_data),np.array(y_train_data)
 
 x_train_data=np.reshape(x_train_data,(x_train_data.shape[0],x_train_data.shape[1],1))
