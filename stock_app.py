@@ -45,7 +45,7 @@ x_train,y_train=[],[]
 for i in range(60,len(train)):
     x_train.append(scaled_data[i-60:i,0])
     y_train.append(scaled_data[i,0])
-    
+
 x_train,y_train=np.array(x_train),np.array(y_train)
 
 x_train=np.reshape(x_train,(x_train.shape[0],x_train.shape[1],1))
@@ -74,11 +74,11 @@ valid['Predictions']=closing_price
 df= pd.read_csv("./stock_data.csv")
 
 app.layout = html.Div([
-   
+
     html.H1("Stock Price Analysis Dashboard", style={"textAlign": "center"}),
-   
+
     dcc.Tabs(id="tabs", children=[
-       
+
         dcc.Tab(label='NSE-TATAGLOBAL Stock Data',children=[
 			html.Div([
 				html.H2("Actual closing price",style={"textAlign": "center"}),
@@ -129,7 +129,7 @@ app.layout = html.Div([
             html.Div([
                 html.H1("Stocks High vs Lows", 
                         style={'textAlign': 'center'}),
-              
+
                 dcc.Dropdown(id='my-dropdown',
                              options=[{'label': 'Tesla', 'value': 'TSLA'},
                                       {'label': 'Apple','value': 'AAPL'}, 
@@ -140,7 +140,7 @@ app.layout = html.Div([
                                     "margin-right": "auto", "width": "60%"}),
                 dcc.Graph(id='highlow'),
                 html.H1("Stocks Market Volume", style={'textAlign': 'center'}),
-         
+
                 dcc.Dropdown(id='my-dropdown2',
                              options=[{'label': 'Tesla', 'value': 'TSLA'},
                                       {'label': 'Apple','value': 'AAPL'}, 
